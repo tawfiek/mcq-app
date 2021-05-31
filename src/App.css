@@ -28,3 +28,17 @@
   justify-content: center;
   margin: 21px;
 }
+
+.result {
+  background: #a19fcc91;
+  max-width: 50%;
+  margin: auto;
+  padding: 73px;
+  border-radius: 0 0 10px 9px;
+}
+
+.result h2 ,
+.result h3 {
+  font-weight: 700;
+  text-align: center;
+}
