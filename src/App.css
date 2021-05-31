@@ -33,7 +33,7 @@
   background: #a19fcc91;
   max-width: 50%;
   margin: auto;
-  padding: 73px;
+  padding: 63px;
   border-radius: 0 0 10px 9px;
 }
 
@@ -41,4 +41,8 @@
 .result h3 {
   font-weight: 700;
   text-align: center;
+}
+
+.carousel-inner {
+  margin-left: 17px;
 }
