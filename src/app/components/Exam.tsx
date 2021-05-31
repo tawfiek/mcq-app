@@ -41,7 +41,7 @@ class Exam extends Component<RouteComponentProps> {
         return questions.reduce(_scoreReducer, 0);
 
         function _scoreReducer (score: number, q: Question): number {
-            return (q.correctAnswerID === q.userAnswerID) ? score + 1 : score - 1;
+            return (q.correctAnswerID === q.userAnswerID) ? score + 1 : score;
         }
     }
 
