@@ -1,8 +1,10 @@
 import { Component,  ReactNode } from "react";
 import { Button, Form, Card } from "react-bootstrap";
 import { RouteComponentProps, withRouter } from "react-router";
+import { Question } from "../../models";
 import { ENV } from "../environment";
 import { startExam, store } from "../store";
+import { shuffle } from "../utils/helpers";
 
 class StartExam extends Component<RouteComponentProps> {
 
@@ -19,8 +21,9 @@ class StartExam extends Component<RouteComponentProps> {
                 body: JSON.stringify(this.state)
             });
             const resBody  =  await result.json();
+            const shuffledQuestions = this.shuffleQuestionOptions(resBody.questions);
 
-            store.dispatch(startExam({exam: resBody.exam, questions: resBody.questions}));
+            store.dispatch(startExam({exam: resBody.exam, questions: shuffledQuestions}));
             if (result.status === 200 ) this.props.history.push('/exam');
             else alert(`Check your Name or Email`);
 
@@ -30,6 +33,19 @@ class StartExam extends Component<RouteComponentProps> {
         }
     }
 
+    // shuffle all the options inside all questions
+    shuffleQuestionOptions (questions: Question[]) : Question[] {
+        const newQuestions: Question[] = questions.map(_mapper);
+
+        return  newQuestions;
+
+        function _mapper (q: Question): Question {
+            let cp: Question = {...q};
+            cp.options = shuffle(cp.options);
+            return cp;
+        }
+
+    }
     render(): ReactNode {
         return (
             <Card >

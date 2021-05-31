@@ -6,10 +6,11 @@ export interface ExamObject {
 }
 
 export interface  Question {
-    options: Option [] ,
     _id: string,
+    options: Option [] ,
     questionBody: string,
     correctAnswerID: string,
+    userAnswerID?: string,
 }
 
 export interface Option {
