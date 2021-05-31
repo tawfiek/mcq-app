@@ -27,7 +27,7 @@ class StartExam extends Component<RouteComponentProps> {
                             <Form.Control type="text" placeholder="Student Name" />
                         </Form.Group>
 
-                        <Button variant="primary" type="submit">
+                        <Button variant="success" type="submit">
                             Submit
                         </Button>
                     </Form>

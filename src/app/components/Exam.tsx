@@ -1,91 +1,91 @@
 import { Component, ReactNode } from "react";
 import { Button, Carousel, Form, FormControl, InputGroup } from "react-bootstrap";
+import { RouteComponentProps, withRouter } from "react-router";
+class Exam extends Component<RouteComponentProps> {
 
-export class Exam extends Component {
+    // TODO: Implement call this function
+    onSubmit () {
+        this.props.history.push('/result');
+    }
+
     render(): ReactNode {
         return (
-            <Carousel wrap={false} interval={null} >
-                <Carousel.Item>
-                    <h2>Are You Okay ?!</h2>
-                    <div>
-                        <Form.Check
-                            type="radio"
-                            label="Yes"
-                        />
-                        <Form.Check
-                            type="radio"
-                            label="Maybe"
-                        />
-                        <Form.Check
-                            type="radio"
-                            label="I don't know"
-                        />
-                        <Form.Check
-                            type="radio"
-                            label="No"
-                        />
-                    </div>
-                </Carousel.Item>
+            <div>
+                <Carousel wrap={false} interval={null} >
+                    <Carousel.Item>
+                        <h2>Are You Okay ?!</h2>
+                        <div>
+                            <Form.Check
+                                type="radio"
+                                label="Yes"
+                            />
+                            <Form.Check
+                                type="radio"
+                                label="Maybe"
+                            />
+                            <Form.Check
+                                type="radio"
+                                label="I don't know"
+                            />
+                            <Form.Check
+                                type="radio"
+                                label="No"
+                            />
+                        </div>
+                    </Carousel.Item>
 
-                <Carousel.Item>
-                    <h2>Are You Okay ?!</h2>
-                    <div>
-                        <Form.Check
-                            type="radio"
-                            label="Yes"
-                        />
-                        <Form.Check
-                            type="radio"
-                            label="Maybe"
-                        />
-                        <Form.Check
-                            type="radio"
-                            label="I don't know"
-                        />
-                        <Form.Check
-                            type="radio"
-                            label="No"
-                        />
-                    </div>
-                </Carousel.Item>
+                    <Carousel.Item>
+                        <h2>Are You Okay ?!</h2>
+                        <div>
+                            <Form.Check
+                                type="radio"
+                                label="Yes"
+                            />
+                            <Form.Check
+                                type="radio"
+                                label="Maybe"
+                            />
+                            <Form.Check
+                                type="radio"
+                                label="I don't know"
+                            />
+                            <Form.Check
+                                type="radio"
+                                label="No"
+                            />
+                        </div>
+                    </Carousel.Item>
 
-                <Carousel.Item>
-                    <h2>Are You Okay ?!</h2>
-                    <div>
-                        <Form.Check
-                            type="radio"
-                            label="Yes"
-                        />
-                        <Form.Check
-                            type="radio"
-                            label="Maybe"
-                        />
-                        <Form.Check
-                            type="radio"
-                            label="I don't know"
-                        />
-                        <Form.Check
-                            type="radio"
-                            label="No"
-                        />
-                    </div>
-                </Carousel.Item>
-            </Carousel>
-            // <Button type="submit" > Submit The Exam </Button>
+                    <Carousel.Item>
+                        <h2>Are You Okay ?!</h2>
+                        <div>
+                            <Form.Check
+                                type="radio"
+                                label="Yes"
+                            />
+                            <Form.Check
+                                type="radio"
+                                label="Maybe"
+                            />
+                            <Form.Check
+                                type="radio"
+                                label="I don't know"
+                            />
+                            <Form.Check
+                                type="radio"
+                                label="No"
+                            />
+                        </div>
+                    </Carousel.Item>
+
+                </Carousel>
+                <div className="submit-btn">
+                    <Button type="submit" variant="success" onClick={() => this.onSubmit()}> Submit </Button>
+                </div>
+            </div>
 
         )
     }
 }
 
-
-
-/**
- *   <InputGroup className="mb-3">
-    <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-    <FormControl aria-label="Text input with checkbox" />
-  </InputGroup>
-  <InputGroup>
-    <InputGroup.Radio aria-label="Radio button for following text input" />
-    <FormControl aria-label="Text input with radio button" />
-  </InputGroup>
- */
+export default withRouter(Exam);

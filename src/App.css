@@ -3,8 +3,11 @@
   font-family: system-ui;
 }
 
+.navbar {
+  background-color: #a19fcc;;
+}
 .carousel.slide {
-  background: #a1c5ecdb;
+  background: #a19fcc91;
   max-width: 50%;
   margin: auto;
   padding: 73px;
@@ -13,4 +16,15 @@
 
 .carousel-item h2 {
   font-weight: 700;
+}
+
+.card {
+  max-width: 50%;
+  margin: auto;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  margin: 21px;
 }
