@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { StartExam } from './app/components/StartExam';
 import { Exam } from './app/components/Exam';
 import { Result } from './app/components/Result';
+import StartExam from './app/components/StartExam';
 
 function App() {
   return (

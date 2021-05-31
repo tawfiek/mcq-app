@@ -1,4 +1,16 @@
 .App {
   text-align: center;
+  font-family: system-ui;
 }
 
+.carousel.slide {
+  background: #a1c5ecdb;
+  max-width: 50%;
+  margin: auto;
+  padding: 73px;
+  border-radius: 0 0 10px 9px;
+}
+
+.carousel-item h2 {
+  font-weight: 700;
+}

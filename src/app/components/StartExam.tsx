@@ -1,12 +1,19 @@
-import { Component,  ReactNode } from "react";
+import { Component,  FormEventHandler,  ReactNode } from "react";
 import { Col, Row, Spinner, Button, Form, Card } from "react-bootstrap";
+import { RouteComponentProps, withRouter } from "react-router";
 
-export class StartExam extends Component {
+class StartExam extends Component<RouteComponentProps> {
+
+    // TODO: Implement call this function
+    onSubmit () {
+        this.props.history.push('/exam');
+    }
+
     render(): ReactNode {
         return (
             <Card >
                  <Card.Body>
-                    <Form>
+                    <Form onSubmit={(e) => this.onSubmit()}>
                         <Form.Group className="mb-3" controlId="email">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" placeholder="example@example.com" />
@@ -20,9 +27,8 @@ export class StartExam extends Component {
                             <Form.Control type="text" placeholder="Student Name" />
                         </Form.Group>
 
-
                         <Button variant="primary" type="submit">
-                        Submit
+                            Submit
                         </Button>
                     </Form>
                 </Card.Body>
@@ -31,3 +37,5 @@ export class StartExam extends Component {
         )
     }
 }
+
+export default withRouter(StartExam);
