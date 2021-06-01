@@ -26,8 +26,6 @@ class Exam extends Component<RouteComponentProps> {
             });
             const resBody  =  await result.json();
 
-            console.log('#DEBUG DONE ', resBody);
-            
             if (result.status === 200 ) this.props.history.push('/result');
             else alert(`Input errors`);
         } catch (e) {
@@ -64,7 +62,6 @@ class Exam extends Component<RouteComponentProps> {
     getOptions (question: Question): JSX.Element[] {
         return question.options.map((o: Option) =>{
             const _handleOnChangeCheck = (e: any) => {
-                // e.preventDefault();
                 store.dispatch(answer({optionID: e.target.value, questionID: question._id}));
                 const stateCp  = this.state;
                 (stateCp.questionsAnswerPairs as any)[question._id] = o._id;
